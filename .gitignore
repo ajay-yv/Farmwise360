@@ -1,0 +1,23 @@
+﻿# Archives
+*.zip
+Frontend-1.zip
+
+# Working directories
+Frontend-1/
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Next.js build outputs
+.next/
+**/.next/
+out/
+**/out/
+
+# Environment files
+.env*.local
+
+# System files
+.DS_Store
+Thumbs.db
