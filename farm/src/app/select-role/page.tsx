@@ -64,7 +64,7 @@ export default function SelectRolePage() {
     if (selectedRole === "business" || selectedRole === "shop_owner") {
       setShowBusinessForm(true);
     } else {
-      window.location.href = "http://localhost:3001";
+      window.location.href = `http://${window.location.hostname}:3001`;
     }
   };
 
