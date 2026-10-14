@@ -1,0 +1,198 @@
+.cardContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 40px 20px;
+}
+
+.topBar {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 10;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--text-main);
+  background-color: transparent;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  cursor: pointer;
+}
+
+.backButton:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: translateX(-2px);
+}
+
+[data-theme="dark"] .backButton:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  background-color: var(--bg-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 44px 38px 40px 38px;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: box-shadow var(--transition-normal), background-color var(--transition-fast);
+}
+
+.logoSection {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.headerText {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  line-height: 1.25;
+}
+
+.subtitle {
+  font-size: 14.5px;
+  color: var(--text-secondary);
+  margin-top: 6px;
+  font-weight: 400;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.passwordFieldWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 6px;
+}
+
+.forgotWrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -6px;
+  margin-bottom: 20px;
+  padding-right: 4px;
+}
+
+.forgotButton {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: transparent;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+}
+
+.forgotButton:hover {
+  color: var(--brand-primary);
+  text-decoration-color: var(--brand-primary);
+}
+
+.buttonsGroup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 18px 0;
+  width: 100%;
+}
+
+.dividerLine {
+  flex: 1;
+  height: 1px;
+  background-color: var(--border-light);
+}
+
+.dividerText {
+  padding: 0 14px;
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 400;
+  user-select: none;
+}
+
+.socialSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 22px;
+  padding-top: 6px;
+}
+
+.socialLabel {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  font-weight: 400;
+  user-select: none;
+}
+
+.socialButtonsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .cardContainer {
+    padding: 20px 14px;
+  }
+
+  .topBar {
+    top: 16px;
+    left: 16px;
+  }
+
+  .card {
+    padding: 34px 22px 30px 22px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 13.5px;
+  }
+
+  .socialButtonsContainer {
+    gap: 24px;
+  }
+}

@@ -1,0 +1,113 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+  margin-left: 14px;
+}
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 52px;
+  background-color: var(--bg-card);
+  border: 1.5px solid var(--border-input);
+  border-radius: var(--radius-pill);
+  transition: border-color var(--transition-fast), 
+              box-shadow var(--transition-fast), 
+              background-color var(--transition-fast);
+  padding: 0 16px;
+}
+
+.inputContainer:hover:not(.focused):not(.containerError) {
+  border-color: var(--border-input-hover);
+}
+
+.inputContainer.focused {
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3.5px var(--brand-primary-ring);
+}
+
+.inputContainer.containerError {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3.5px rgba(239, 68, 68, 0.15);
+}
+
+.leftIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  margin-right: 12px;
+  flex-shrink: 0;
+  pointer-events: none;
+  transition: color var(--transition-fast);
+}
+
+.inputContainer.focused .leftIconWrapper {
+  color: var(--brand-primary);
+}
+
+.input {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  color: var(--text-main);
+  padding: 0 4px;
+}
+
+/* Hide native Edge/IE password reveal and clear buttons */
+.input::-ms-reveal,
+.input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+  font-size: 14.5px;
+  font-weight: 400;
+}
+
+.toggleButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  padding: 6px;
+  margin-left: 8px;
+  border-radius: 50%;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.toggleButton:hover {
+  color: var(--text-main);
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="dark"] .toggleButton:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.errorMessage {
+  font-size: 12px;
+  color: #ef4444;
+  margin-top: 5px;
+  margin-left: 18px;
+  animation: fadeIn 0.2s ease-in-out;
+}

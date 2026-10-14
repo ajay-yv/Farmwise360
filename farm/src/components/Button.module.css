@@ -1,0 +1,81 @@
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  padding: 0 24px;
+  font-size: 15.5px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* Primary Solid Green Variant */
+.primary {
+  background-color: var(--brand-primary);
+  color: #ffffff;
+  border: 1.5px solid transparent;
+  box-shadow: var(--shadow-primary-btn);
+}
+
+.primary:hover:not(:disabled) {
+  background-color: var(--brand-primary-hover);
+  box-shadow: var(--shadow-primary-btn-hover);
+  transform: translateY(-1px);
+}
+
+.primary:active:not(:disabled) {
+  background-color: var(--brand-primary-active);
+  transform: translateY(0) scale(0.99);
+}
+
+/* Outline Green Variant */
+.outline {
+  background-color: transparent;
+  color: var(--brand-primary);
+  border: 1.5px solid var(--brand-primary);
+}
+
+.outline:hover:not(:disabled) {
+  background-color: var(--brand-primary-subtle);
+  border-color: var(--brand-primary-hover);
+  color: var(--brand-primary-hover);
+  transform: translateY(-1px);
+}
+
+.outline:active:not(:disabled) {
+  transform: translateY(0) scale(0.99);
+}
+
+/* Ghost / Nav Variant */
+.ghost {
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: 1.5px solid transparent;
+}
+
+.ghost:hover:not(:disabled) {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: var(--text-main);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.loadingWrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}

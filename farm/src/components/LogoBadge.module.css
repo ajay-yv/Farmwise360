@@ -1,0 +1,33 @@
+.logoContainer {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  user-select: none;
+  transition: transform var(--transition-spring), box-shadow var(--transition-normal);
+}
+
+.logoContainer:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-logo);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(3, 131, 74, 0.16);
+  background-color: var(--brand-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
