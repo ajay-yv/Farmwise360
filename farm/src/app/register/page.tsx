@@ -152,7 +152,7 @@ export default function RegisterPage() {
     // Navigate back to the first page (/) with the identifier prefilled
     setTimeout(() => {
       const identifierParam = encodeURIComponent(email || phoneNumber);
-      router.push(`/?identifier=${identifierParam}&registered=true`);
+      window.location.href = `/?identifier=${identifierParam}&registered=true`;
     }, 900);
   };
 

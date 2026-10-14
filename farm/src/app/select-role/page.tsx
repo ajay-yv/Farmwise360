@@ -64,7 +64,11 @@ export default function SelectRolePage() {
     if (selectedRole === "business" || selectedRole === "shop_owner") {
       setShowBusinessForm(true);
     } else {
-      window.location.href = `http://${window.location.hostname}:3001`;
+      if (typeof window !== "undefined" && window.location.hostname.includes("loca.lt")) {
+        window.location.href = "https://eighty-crews-yell.loca.lt";
+      } else {
+        window.location.href = `http://${window.location.hostname}:3001`;
+      }
     }
   };
 

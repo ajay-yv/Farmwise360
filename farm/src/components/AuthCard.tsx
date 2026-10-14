@@ -86,9 +86,9 @@ export const AuthCard: React.FC<AuthCardProps> = ({
       setIsLoading(false);
       showToast("Authentication Successful", `Welcome back! Opening role selection...`);
       setTimeout(() => {
-        router.push("/select-role");
-      }, 500);
-    }, 800);
+        window.location.href = "/select-role";
+      }, 400);
+    }, 600);
   };
 
   const handleSocialLogin = (provider: SocialProvider) => {
@@ -102,9 +102,9 @@ export const AuthCard: React.FC<AuthCardProps> = ({
         `Successfully connected via ${providerName}. Opening role selection...`
       );
       setTimeout(() => {
-        router.push("/select-role");
-      }, 500);
-    }, 900);
+        window.location.href = "/select-role";
+      }, 400);
+    }, 600);
   };
 
   const handleBack = () => {
@@ -145,7 +145,7 @@ export const AuthCard: React.FC<AuthCardProps> = ({
           </div>
 
           {/* Login Form */}
-          <form onSubmit={handleLoginSubmit} className={styles.form} noValidate>
+          <form onSubmit={handleLoginSubmit} action="#" method="post" className={styles.form} noValidate>
             <InputField
               id="login-identifier"
               name="identifier"
@@ -210,7 +210,7 @@ export const AuthCard: React.FC<AuthCardProps> = ({
                 type="button"
                 variant="outline"
                 onClick={() => {
-                  router.push("/register");
+                  window.location.href = "/register";
                 }}
                 id="btn-register-toggle"
               >
