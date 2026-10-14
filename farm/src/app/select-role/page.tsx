@@ -64,7 +64,7 @@ export default function SelectRolePage() {
     if (selectedRole === "business" || selectedRole === "shop_owner") {
       setShowBusinessForm(true);
     } else {
-      setIsConfirmed(true);
+      window.location.href = "http://localhost:3001";
     }
   };
 
@@ -443,31 +443,13 @@ export default function SelectRolePage() {
                 <h2 style={{ fontSize: "1.25rem", fontWeight: "700", color: "#0F172A", marginBottom: "0.5rem" }}>
                   Role Confirmed: {ROLE_CONFIGS.find((r) => r.id === selectedRole)?.title}
                 </h2>
-                <a
-                  href="http://localhost:3001"
-                  className={`${styles.confirmBtn} ${styles.confirmBtnActive}`}
-                  style={{
-                    display: "block",
-                    textDecoration: "none",
-                    marginBottom: "0.75rem",
-                    lineHeight: "2.75rem",
-                  }}
-                >
-                  Enter FarmWise360 Workspace →
-                </a>
+                <p style={{ color: "#64748B", fontSize: "0.95rem", marginBottom: "1.5rem" }}>
+                  Welcome to FarmWise360! Your workspace is ready.
+                </p>
                 <button
                   type="button"
                   onClick={() => setIsConfirmed(false)}
-                  style={{
-                    background: "none",
-                    border: "none",
-                    color: "#64748B",
-                    fontSize: "0.9rem",
-                    cursor: "pointer",
-                    textDecoration: "underline",
-                    padding: "0.5rem",
-                    width: "100%",
-                  }}
+                  className={`${styles.confirmBtn} ${styles.confirmBtnActive}`}
                 >
                   Change Role
                 </button>
@@ -519,6 +501,12 @@ export default function SelectRolePage() {
                 </button>
               </>
             )}
+
+            {/* Back Link to Sign In */}
+            <Link href="/" className={styles.backLink}>
+              <ArrowLeft size={16} />
+              <span>Back to Sign In</span>
+            </Link>
           </>
         )}
       </div>

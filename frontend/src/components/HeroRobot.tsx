@@ -25,7 +25,7 @@ export const HeroRobot: React.FC = () => {
       </div>
 
       <div className="hero-text-block">
-        <h2 className="hero-title">Hello, I&apos;m Farmwise AI</h2>
+        <h2 className="hero-title">Hello!</h2>
         <h3 className="hero-subtitle">Your smart farming assistant</h3>
         <p className="hero-description">
           Ask me anything about farming, market prices, recycling, storeservices and more!
